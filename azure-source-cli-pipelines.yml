@@ -28,3 +28,4 @@ steps:
     repository: 'appscan/appscan-src-cli:10.0.8'
     command: 'build'
     Dockerfile: '**/Dockerfile'
+    tags: 'my-source-cli:latest'
