@@ -26,6 +26,5 @@ steps:
   inputs:
     containerRegistry: 'HCL Harbor'
     repository: 'appscan/appscan-src-cli:10.0.8'
-    command: 'build'
+    command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags: 'latest'
