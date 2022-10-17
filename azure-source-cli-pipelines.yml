@@ -22,10 +22,8 @@ steps:
     containerRegistry: 'HCL Harbor'
     command: 'login'
 
-- task: Docker@2
-  inputs:
-    containerRegistry: 'HCL Harbor'
-    repository: 'appscan/appscan-src-cli:10.0.8'
-    command: 'build'
-    Dockerfile: '**/Dockerfile'
-    tags: 'my-source-cli:latest'
+    - task: Docker@2
+      inputs:
+        command: 'build'
+        Dockerfile: '**/Dockerfile'
+        tags: 'my-source-cli:latest'
