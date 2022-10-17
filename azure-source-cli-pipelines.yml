@@ -22,8 +22,8 @@ steps:
     containerRegistry: 'HCL Harbor'
     command: 'login'
 
-    - task: Docker@2
-      inputs:
-        command: 'build'
-        Dockerfile: '**/Dockerfile'
-        tags: 'my-source-cli:latest'
+- task: Docker@2
+  inputs:
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
+    tags: 'my-source-cli:latest'
