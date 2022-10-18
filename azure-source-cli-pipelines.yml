@@ -18,4 +18,5 @@ steps:
     command: 'build'
     Dockerfile: '**/Dockerfile'
     tags: 'my-source-cli:latest'
+    displayName: 'Build dockerfile'
 
