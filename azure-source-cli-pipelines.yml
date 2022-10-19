@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -24,8 +25,15 @@ steps:
 - script: sudo docker run -e "AS_LICENSE_TYPE=CLS" -e "AS_LICENSE_SERVER=hclsoftware-uat" -e "AS_LICENSE_SERVER_ID=3MYLKMNGTJ5X" -e "AS_INSTALL_MODE=standalone" -v "$(pwd):/host" my-source-cli "script /host/azure-source-cli.script"
   displayName: 'AppScan Source'
 
-- task: PublishPipelineArtifact@1
+- task: DownloadBuildArtifacts@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: 'report_FP.pdf'
-    publishLocation: 'pipeline'
+    buildType: 'current'
+    downloadType: 'specific'
+    itemPattern: '**/*.pdf'
+    downloadPath: '$(System.ArtifactsDirectory)'
+- task: DownloadBuildArtifacts@1
+  inputs:
+    buildType: 'current'
+    downloadType: 'specific'
+    itemPattern: '**/*.ozasmt'
+    downloadPath: '$(System.ArtifactsDirectory)'
