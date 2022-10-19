@@ -17,7 +17,7 @@ variables:
   value: $[variables.AS_LICENSE_TYPE]
 
 steps:
-- script: echo $(AS_INSTALL_MODE) $(AS_LICENSE_TYPE)
+- script: echo "$(AS_INSTALL_MODE) $(AS_LICENSE_TYPE)"
   displayName: 'Run a one-line script'
 
 - script: |
