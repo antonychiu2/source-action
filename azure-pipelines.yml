@@ -20,8 +20,7 @@ steps:
 - script: echo "$(AS_INSTALL_MODE) $(AS_LICENSE_TYPE)"
   displayName: 'Run a one-line script'
 
-
-  - task: PublishPipelineArtifact@1
-    inputs:
-      targetPath: '$(Pipeline.Workspace)'
-      publishLocation: 'pipeline'
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    publishLocation: 'pipeline'
