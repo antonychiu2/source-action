@@ -19,8 +19,13 @@ variables:
 steps:
 - script: echo "$(AS_INSTALL_MODE) $(AS_LICENSE_TYPE) $(Pipeline.Workspace)"
   displayName: 'Run a one-line script'
+
+steps:
+- script: ls -l
+  displayName: 'Directory Listing'
+
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)/AltoroJ.war'
+    targetPath: '$(Pipeline.Workspace)/s/AltoroJ.war'
     publishLocation: 'pipeline'
     
