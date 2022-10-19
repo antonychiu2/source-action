@@ -22,4 +22,3 @@ steps:
 
 - script: sudo docker images"
   displayName: 'AppScan Source'
-- 
