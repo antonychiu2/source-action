@@ -19,6 +19,8 @@ variables:
   value: $[variables.AS_LICENSE_SERVER_ID]
 - name: my-passed-variables
   value: $[variables.AS_INSTALL_MODE]
+- name: assessment-file
+  value: AltoroJ.ozasmt
 steps:
 - script: ls -l
   displayName: 'List Directory'
@@ -39,8 +41,4 @@ steps:
     script: 'ls -l'
   displayName: 'Directory Listing'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+
