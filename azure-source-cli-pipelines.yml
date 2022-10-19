@@ -27,9 +27,5 @@ steps:
 - task: DownloadPipelineArtifact@2
   inputs:
     buildType: 'current'
-    artifactName: 'reports'
-    itemPattern: |
-      **/*.pdf
-      **/*.ozasmt
-      **/*.html
+    artifactName: 'report_FP.pdf'
     targetPath: '$(Pipeline.Workspace)'
