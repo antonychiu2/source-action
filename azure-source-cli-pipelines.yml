@@ -10,8 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-- group: source-container-cli
-- name: AS_LICENSE_TYPE
+  - template: variables.yml
+
 
 steps:
 - script: ls -l
