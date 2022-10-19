@@ -50,5 +50,5 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Pipeline.Workspace)/s/docker_scan_altoroJ.ozasmt'
-    artifact: 'report'
+    artifact: 'assessment'
     publishLocation: 'pipeline'
