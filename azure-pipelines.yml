@@ -17,10 +17,10 @@ variables:
   value: $[variables.AS_LICENSE_TYPE]
 
 steps:
-- script: echo "$(AS_INSTALL_MODE) $(AS_LICENSE_TYPE)"
+- script: echo "$(AS_INSTALL_MODE) $(AS_LICENSE_TYPE) $(Pipeline.Workspace)"
   displayName: 'Run a one-line script'
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)\AltoroJ.war'
+    targetPath: '$(Pipeline.Workspace)/AltoroJ.war'
     publishLocation: 'pipeline'
     
