@@ -26,5 +26,5 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Pipeline.Workspace)/s/AltoroJ.war'
+    artifact: 'report'
     publishLocation: 'pipeline'
-    
