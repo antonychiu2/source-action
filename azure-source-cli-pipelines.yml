@@ -33,3 +33,9 @@ steps:
 
 - script: sudo docker run -e "AS_LICENSE_TYPE=CLS" -e "AS_LICENSE_SERVER=hclsoftware-uat" -e "AS_LICENSE_SERVER_ID=3MYLKMNGTJ5X" -e "AS_INSTALL_MODE=standalone" -v "$(pwd):/host" my-source-cli "script /host/azure-source-cli.script"
   displayName: 'AppScan Source'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+    FileCopyOptions: '**/*.pdf'
