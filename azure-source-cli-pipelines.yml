@@ -38,4 +38,6 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-    FileCopyOptions: '**/*.pdf'
+    FileCopyOptions: |
+      '**/*.pdf'
+      '**/*.ozasmt'
