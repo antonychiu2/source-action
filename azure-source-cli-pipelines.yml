@@ -41,4 +41,8 @@ steps:
     script: 'ls -l'
   displayName: 'Directory Listing'
 
-
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)\s\report_FP.pdf'
+    artifact: 'report'
+    publishLocation: 'pipeline'
