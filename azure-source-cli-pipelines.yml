@@ -20,14 +20,5 @@ steps:
     tags: 'my-source-cli:latest'
   displayName: 'Build dockerfile'
 
-- script: docker run -e "AS_LICENSE_TYPE=CLS" -e "AS_LICENSE_SERVER=hclsoftware-uat" -e "AS_LICENSE_SERVER_ID=3MYLKMNGTJ5X" -e "AS_INSTALL_MODE=standalone" -v "$(pwd):/host" my-source-cli
-  displayName: 'List Directory'
-
-- task: CmdLine@2
-  inputs:
-    script: |
-      login
-      oa /host/AltoroJ.war 
-      scan /host/docker_scan_altoroJ.ozasmt
-      report "Findings By Fix Group" pdf-comprehensive /host/report_FP.pdf -includeSrcBefore:5 -includeSrcAfter:5 -includeTrace:suspect -includeHowToFix
+- script: sudo docker run -e "AS_LICENSE_TYPE=CLS" -e "AS_LICENSE_SERVER=hclsoftware-uat" -e "AS_LICENSE_SERVER_ID=3MYLKMNGTJ5X" -e "AS_INSTALL_MODE=standalone" -v "$(pwd):/host" my-source-cli "script /host/azure-source-cli.script"
   displayName: 'AppScan Source'
