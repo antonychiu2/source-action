@@ -12,10 +12,10 @@ pool:
 variables:
 - group: source-container-cli
 - name: my-passed-variables
-  value: $[variables.]
+  value: $[variables.AS_INSTALL_MODE]
 
 steps:
-- script: echo Hello, world!
+- script: echo $(AS_INSTALL_MODE)
   displayName: 'Run a one-line script'
 
 - script: |
