@@ -20,3 +20,5 @@ steps:
     tags: 'my-source-cli:latest'
     displayName: 'Build dockerfile'
 
+- scripts: |
+    docker run -it -e "AS_LICENSE_TYPE=CLS" -e "AS_LICENSE_SERVER=hclsoftware-uat" -e "AS_LICENSE_SERVER_ID=3MYLKMNGTJ5X" -e "AS_INSTALL_MODE=standalone" -v "$(pwd):/host" my-source-cli
