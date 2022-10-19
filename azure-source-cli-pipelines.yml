@@ -10,8 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  - template: variables.yml
-
+- group: source-container-cli
+- name: my-passed-variables
+  value: $[variables.AS_INSTALL_MODE]
+- name: my-passed-variables
+  value: $[variables.AS_LICENSE_TYPE]
 
 steps:
 - script: ls -l
