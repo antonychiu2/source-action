@@ -21,7 +21,7 @@ steps:
     arguments: '-t my-source-cli:latest'
   displayName: 'Build dockerfile'
 
-- script: sudo docker run -e "AS_LICENSE_TYPE=$(AS_LICENSE_TYPE)" -e "AS_LICENSE_SERVER=hclsoftware-uat" -e "AS_LICENSE_SERVER_ID=3MYLKMNGTJ5X" -e "AS_INSTALL_MODE=standalone" -v "$(pwd):/host" my-source-cli "script /host/azure-source-cli.script"
+- script: sudo docker run -e "AS_LICENSE_TYPE=${AS_LICENSE_TYPE}" -e "AS_LICENSE_SERVER=hclsoftware-uat" -e "AS_LICENSE_SERVER_ID=3MYLKMNGTJ5X" -e "AS_INSTALL_MODE=standalone" -v "$(pwd):/host" my-source-cli "script /host/azure-source-cli.script"
   displayName: 'AppScan Source'
 
 - task: DownloadPipelineArtifact@2
