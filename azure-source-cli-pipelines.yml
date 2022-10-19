@@ -6,7 +6,6 @@
 
 trigger: none
 
-
 pool:
   vmImage: ubuntu-latest
 
@@ -25,15 +24,12 @@ steps:
 - script: sudo docker run -e "AS_LICENSE_TYPE=CLS" -e "AS_LICENSE_SERVER=hclsoftware-uat" -e "AS_LICENSE_SERVER_ID=3MYLKMNGTJ5X" -e "AS_INSTALL_MODE=standalone" -v "$(pwd):/host" my-source-cli "script /host/azure-source-cli.script"
   displayName: 'AppScan Source'
 
-- task: DownloadBuildArtifacts@1
+- task: DownloadPipelineArtifact@2
   inputs:
     buildType: 'current'
-    downloadType: 'specific'
-    itemPattern: '**/*.pdf'
-    downloadPath: '$(System.ArtifactsDirectory)'
-- task: DownloadBuildArtifacts@1
-  inputs:
-    buildType: 'current'
-    downloadType: 'specific'
-    itemPattern: '**/*.ozasmt'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    artifactName: 'reports'
+    itemPattern: |
+      **/*.pdf
+      **/*.ozasmt
+      **/*.html
+    targetPath: '$(Pipeline.Workspace)'
