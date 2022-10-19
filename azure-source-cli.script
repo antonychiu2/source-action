@@ -1,0 +1,4 @@
+login
+oa /host/AltoroJ.war 
+scan /host/docker_scan_altoroJ.ozasmt
+report "Findings By Fix Group" pdf-comprehensive /host/report_FP.pdf -includeSrcBefore:5 -includeSrcAfter:5 -includeTrace:suspect -includeHowToFix
