@@ -23,9 +23,9 @@ steps:
 
 - script: sudo docker run -e "AS_LICENSE_TYPE=CLS" -e "AS_LICENSE_SERVER=hclsoftware-uat" -e "AS_LICENSE_SERVER_ID=3MYLKMNGTJ5X" -e "AS_INSTALL_MODE=standalone" -v "$(pwd):/host" my-source-cli "script /host/azure-source-cli.script"
   displayName: 'AppScan Source'
-- task: DownloadBuildArtifacts@1
+
+- task: PublishPipelineArtifact@1
   inputs:
-    buildType: 'current'
-    downloadType: 'single'
-    artifactName: 'report_FP.pdf'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'report_FP.pdf'
+    publishLocation: 'pipeline'
