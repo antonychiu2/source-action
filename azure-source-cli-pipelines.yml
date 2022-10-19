@@ -20,5 +20,5 @@ steps:
     tags: 'my-source-cli:latest'
   displayName: 'Build dockerfile'
 
-- script: sudo docker images"
+- script: docker images"
   displayName: 'AppScan Source'
