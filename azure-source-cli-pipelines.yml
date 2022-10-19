@@ -46,3 +46,9 @@ steps:
     targetPath: '$(Pipeline.Workspace)\s\report_FP.pdf'
     artifact: 'report'
     publishLocation: 'pipeline'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)\s\docker_scan_altoroJ.ozasmt.pdf'
+    artifact: 'report'
+    publishLocation: 'pipeline'
