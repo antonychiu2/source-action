@@ -11,8 +11,7 @@ pool:
 
 variables:
 - group: source-container-cli
-- name: my-passed-variable
-  value: $[variables.myhello] # uses runtime expression
+- name: AS_LICENSE_TYPE
 
 steps:
 - script: ls -l
