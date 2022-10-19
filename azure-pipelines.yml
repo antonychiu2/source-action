@@ -13,6 +13,8 @@ variables:
 - group: source-container-cli
 - name: my-passed-variables
   value: $[variables.AS_INSTALL_MODE]
+- name: my-passed-variables
+  value: $[variables.AS_INSTALL_MODE]
 
 steps:
 - script: echo $(AS_INSTALL_MODE)
